@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "3babb7cc-eb65-4775-bcba-6297e60a3375": {
+      "ProjectGuid": "3babb7cc-eb65-4775-bcba-6297e60a3375",
+      "DisplayName": "MorseProject",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
