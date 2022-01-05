@@ -150,6 +150,32 @@ namespace MorseProject
             }
             return AvaPorts;
         }
+        /// <summary>
+        ///判断数组是否单增
+        /// </summary>
+        /// <param name="array"></param>
+        /// <param name="len"></param>
+        /// <returns></returns>
+        private static bool isIncrease(List<double> array, int len)
+        {
+            if (len != 1)
+                return (array[len - 2] <= array[len - 1]) && isIncrease(array, len - 1);
+            else
+                return true;
+        }
+        /// <summary>
+        ///判断数组是否单减
+        /// </summary>
+        /// <param name="array"></param>
+        /// <param name="len"></param>
+        /// <returns></returns>
+        private static bool isDecrease(List<double> array, int len)
+        {
+            if (len != 1)
+                return (array[len - 2] >= array[len - 1]) && isDecrease(array, len - 1);
+            else
+                return true;
+        }
     }
 }
 
