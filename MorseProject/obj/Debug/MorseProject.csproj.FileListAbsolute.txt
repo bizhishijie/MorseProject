@@ -19,3 +19,4 @@ E:\WindowsProject\MorseProject\MorseProject\obj\Debug\MorseProject.csproj.Genera
 E:\WindowsProject\MorseProject\MorseProject\obj\Debug\MorseProject.csproj.CoreCompileInputs.cache
 E:\WindowsProject\MorseProject\MorseProject\obj\Debug\MorseProject.exe
 E:\WindowsProject\MorseProject\MorseProject\obj\Debug\MorseProject.pdb
+C:\Users\sharuicheng\source\repos\MorseProject\MorseProject\obj\Debug\MorseProject.csproj.SuggestedBindingRedirects.cache

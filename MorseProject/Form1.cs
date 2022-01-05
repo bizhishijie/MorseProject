@@ -9,10 +9,11 @@ namespace MorseProject
 {
     public partial class Form1 : Form
     {
-        const int minThre = 25;//区分有无
-        const int daltaThre = 35;//选取的阈值.-阈值
-        const int minLengthThre = 3;//一个字母的最短长度，对应0.3s
-        const int maxLengthThre = 10;//一个字母的最长长度，对应1s
+        const int fps = 40;//T=1/fps
+        const int minThre = 65;//区分有无
+        const int daltaThre = 85;//选取的阈值.-阈值
+        const int minLengthThre = ((int)(0.3 * fps));//一个字母的最短长度，对应0.3s
+        const int maxLengthThre = ((int)(0.5 * fps));//一个字母的最长长度，对应1s
 
         int i = 0;//循环变量
         int j = 0;//判断是否长时间卡住
@@ -23,6 +24,8 @@ namespace MorseProject
         string str = string.Empty;//空字符串 显示用
 
         Action<string> actionDraw;//匿名操作函数
+        Action<string> actionDraw1;//匿名操作函数
+        Action<string> actionDraw2;//匿名操作函数
         //Action<string> actionClear;//匿名操作函数
         SerialPort sp = new SerialPort();//端口
         string morseStr = string.Empty;//保存莫尔斯电码的字符串
@@ -31,7 +34,6 @@ namespace MorseProject
 
 
         List<double> numList = new List<double>();//存储临时数据的数组
-
 
         public Form1()
         {//初始化
@@ -66,6 +68,7 @@ namespace MorseProject
             sp.Close();
             stop = true;
             portsChoose.Enabled = true;
+            thread.Abort();//关闭线程
         }
         private void buttonRefresh_Click(object sender, EventArgs e)
         {
@@ -85,75 +88,76 @@ namespace MorseProject
             {
                 num = double.Parse(sp.ReadLine());
                 numList.Add(num);
+                if (labelTemp1.InvokeRequired)
+                {
+                    //bugTmpStr = MorseCode.Dec(morseStr);
+                    this.labelTemp1.Invoke(actionDraw1, num.ToString());
+                }
                 return num;
             }
             catch
             {
-                numList.Add(0);
+                numList.Add(minThre);
                 return 0;
             }
         }
-
+        /// <summary>
+        /// 显示
+        /// </summary>
         private void draw()
-        {//将点划线画出来
+        {
             if (morseDataLabel.InvokeRequired)
-            {
-                //bugTmpStr = MorseCode.Dec(morseStr);
-                this.morseDataLabel.Invoke(actionDraw,morseDataLabel.Text+str);
-            }
+                this.morseDataLabel.Invoke(actionDraw, morseDataLabel.Text + str);
         }
-        private bool isIncrease(List<double> array, int len)
-        {//判断数组是否单增
-            if (len != 1)
-                return (array[len - 2] <= array[len - 1]) && isIncrease(array, len - 1);
-            else
-                return true;
-        }
-        private bool isDecrease(List<double> array, int len)
-        {//判断数组是否单减
-            if (len != 1)
-                return (array[len - 2] >= array[len - 1]) && isDecrease(array, len - 1);
-            else
-                return true;
-        }
+
         /// <summary>
         /// 分析获得的数据
         /// </summary>
-        private void analyse()
+        public void analyse()
         {
             length = numList.Count;
-            if (length < minLengthThre) return;//如果长度过短，直接返回
+            //if (length < minLengthThre) { return; }//如果长度过短，直接返回
 
-            for (i = 0; i < length; i++)
-                if (numList[0] >= minThre || numList[length - 1] >= minThre || numList.Max() < minThre)
+            if (numList[0] >= minThre || numList[length - 1] >= minThre || numList.Max() < minThre)
+            {
+                j += 1;
+                if (j > 40)
                 {
-                    j++;
-                    if (j > 20)
-                        break;
-                    return;
-                }
-                else
-                {
+                    numList = numList.Skip(10).Take(10).ToList();//取列表的后一半
+                    morseStr = String.Empty;
                     j = 0;
                 }
-
-            if (numList.Count > maxLengthThre)//认为分割两个字母
-            {
-                str = MorseCode.Dec(morseStr);
-                morseStr = string.Empty;
-                draw();
+                if(j> 35)
+                {
+                    str = MorseCode.Dec(morseStr);
+                    morseStr = string.Empty;
+                    draw();
+                }
             }
-
-            if (numList.Max() > daltaThre)
-                morseStr += '-';
             else
-                morseStr += '.';
+            {
+                j = 0;
 
-            numList.Clear();
+                if (numList.Max() > daltaThre)
+                    morseStr += '-';
+                else
+                    morseStr += '.';
+
+                if (labelTemp2.InvokeRequired)
+                {
+                    this.labelTemp2.Invoke(actionDraw2, morseStr);
+                }
+                numList.Clear();
+            }
         }
+        /// <summary>
+        /// 进程
+        /// </summary>
         private void RunTime()
-        {//进程
+        {
             actionDraw = (str) => { this.morseDataLabel.Text = str; };
+            actionDraw1 = (str) => { this.labelTemp1.Text = str; };
+            actionDraw2 = (str) => { this.labelTemp2.Text = str; };
             while (true)
             {
                 if (stop)

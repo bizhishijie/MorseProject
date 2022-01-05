@@ -34,6 +34,8 @@ namespace MorseProject
             this.portsChoose = new System.Windows.Forms.Button();
             this.buttonStop = new System.Windows.Forms.Button();
             this.morseDataLabel = new System.Windows.Forms.Label();
+            this.labelTemp1 = new System.Windows.Forms.Label();
+            this.labelTemp2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // portsBox
@@ -83,11 +85,31 @@ namespace MorseProject
             this.morseDataLabel.TabIndex = 4;
             this.morseDataLabel.Text = "收到的信息为：";
             // 
+            // labelTemp1
+            // 
+            this.labelTemp1.AutoSize = true;
+            this.labelTemp1.Location = new System.Drawing.Point(490, 290);
+            this.labelTemp1.Name = "labelTemp1";
+            this.labelTemp1.Size = new System.Drawing.Size(55, 15);
+            this.labelTemp1.TabIndex = 5;
+            this.labelTemp1.Text = "label1";
+            // 
+            // labelTemp2
+            // 
+            this.labelTemp2.AutoSize = true;
+            this.labelTemp2.Location = new System.Drawing.Point(490, 336);
+            this.labelTemp2.Name = "labelTemp2";
+            this.labelTemp2.Size = new System.Drawing.Size(55, 15);
+            this.labelTemp2.TabIndex = 6;
+            this.labelTemp2.Text = "label1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.labelTemp2);
+            this.Controls.Add(this.labelTemp1);
             this.Controls.Add(this.morseDataLabel);
             this.Controls.Add(this.buttonStop);
             this.Controls.Add(this.portsChoose);
@@ -108,6 +130,8 @@ namespace MorseProject
         protected System.Windows.Forms.Button portsChoose;
         private System.Windows.Forms.Button buttonStop;
         private System.Windows.Forms.Label morseDataLabel;
+        private System.Windows.Forms.Label labelTemp1;
+        private System.Windows.Forms.Label labelTemp2;
     }
 }
 
