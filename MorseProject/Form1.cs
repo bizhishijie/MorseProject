@@ -10,8 +10,10 @@ namespace MorseProject
     public partial class Form1 : Form
     {
         const int fps = 40;//T=1/fps
-        const int minThre = 65;//区分有无
-        const int daltaThre = 85;//选取的阈值.-阈值
+        //const int minThre = 65;//区分有无
+        //const int daltaThre = 85;//选取的阈值.-阈值
+        double minThre = 0;
+        double daltaThre = 0;
         const int minLengthThre = ((int)(0.3 * fps));//一个字母的最短长度，对应0.3s
         const int maxLengthThre = ((int)(0.5 * fps));//一个字母的最长长度，对应1s
 
@@ -26,10 +28,8 @@ namespace MorseProject
         Action<string> actionDraw;//匿名操作函数
         Action<string> actionDraw1;//匿名操作函数
         Action<string> actionDraw2;//匿名操作函数
-        //Action<string> actionClear;//匿名操作函数
         SerialPort sp = new SerialPort();//端口
         string morseStr = string.Empty;//保存莫尔斯电码的字符串
-        string bugTmpStr = string.Empty;//保存解码bug的字符串
         List<SerialPort> AvaPorts = MorseCode.GetSerialPorts();//可用的端口
 
 
@@ -40,43 +40,53 @@ namespace MorseProject
             InitializeComponent();
         }
 
+        /// <summary>
+        /// 初始化窗口
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Form1_Load(object sender, EventArgs e)
-        {//初始化
+        {
             loadPort();
             //morseDataLabel.Text = MorseCode.Dec("");
         }
+        /// <summary>
+        /// 加载端口
+        /// </summary>
         private void loadPort()
-        {//加载端口
+        {
             labelPort.Text = "共检测到" + AvaPorts.Count.ToString() + "个串口";
             portsBox.Items.Clear();
             for (i = 0; i < AvaPorts.Count; i++)
                 portsBox.Items.Add(AvaPorts[i].PortName);
             portsBox.SelectedIndex = 0;
         }
-
+        /// <summary>
+        /// 选择端口按键
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void portsChoose_Click(object sender, EventArgs e)
-        {//选择端口按键
+        {
             sp.PortName = portsBox.SelectedItem.ToString();
+            minThre = Convert.ToDouble(textBoxMin.Text);
             sp.Open();
             thread = new Thread(RunTime);//创建线程
             thread.Start();
             portsChoose.Enabled = false;
         }
 
+        /// <summary>
+        /// 停止按键
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void buttonStop_Click(object sender, EventArgs e)
-        {//停止按键
+        {
             sp.Close();
             stop = true;
             portsChoose.Enabled = true;
             thread.Abort();//关闭线程
-        }
-        private void buttonRefresh_Click(object sender, EventArgs e)
-        {
-            AvaPorts = MorseCode.GetSerialPorts();//可用的端口
-            portsBox.Items.Clear();
-            for (i = 0; i < AvaPorts.Count; i++)
-                portsBox.Items.Add(AvaPorts[i].PortName);
-            portsBox.SelectedIndex = 0;
         }
         /// <summary>
         /// 从指定的端口读取数字
@@ -127,7 +137,7 @@ namespace MorseProject
                     morseStr = String.Empty;
                     j = 0;
                 }
-                if(j> 35)
+                if (j > 35)
                 {
                     str = MorseCode.Dec(morseStr);
                     morseStr = string.Empty;

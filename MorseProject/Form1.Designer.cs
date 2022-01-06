@@ -36,6 +36,10 @@ namespace MorseProject
             this.morseDataLabel = new System.Windows.Forms.Label();
             this.labelTemp1 = new System.Windows.Forms.Label();
             this.labelTemp2 = new System.Windows.Forms.Label();
+            this.textBoxMin = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // portsBox
@@ -103,11 +107,47 @@ namespace MorseProject
             this.labelTemp2.TabIndex = 6;
             this.labelTemp2.Text = "label1";
             // 
+            // textBoxMin
+            // 
+            this.textBoxMin.Location = new System.Drawing.Point(493, 83);
+            this.textBoxMin.Name = "textBoxMin";
+            this.textBoxMin.Size = new System.Drawing.Size(100, 25);
+            this.textBoxMin.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(490, 51);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 15);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "控制有无";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(490, 130);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 15);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "控制.-";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(493, 159);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 25);
+            this.textBox2.TabIndex = 10;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBoxMin);
             this.Controls.Add(this.labelTemp2);
             this.Controls.Add(this.labelTemp1);
             this.Controls.Add(this.morseDataLabel);
@@ -132,6 +172,10 @@ namespace MorseProject
         private System.Windows.Forms.Label morseDataLabel;
         private System.Windows.Forms.Label labelTemp1;
         private System.Windows.Forms.Label labelTemp2;
+        private System.Windows.Forms.TextBox textBoxMin;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }
 
