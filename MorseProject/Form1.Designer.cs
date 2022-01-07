@@ -39,7 +39,8 @@ namespace MorseProject
             this.textBoxMin = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxDelta = new System.Windows.Forms.TextBox();
+            this.buttonClear = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // portsBox
@@ -83,7 +84,7 @@ namespace MorseProject
             // 
             this.morseDataLabel.AutoSize = true;
             this.morseDataLabel.Font = new System.Drawing.Font("宋体", 15F);
-            this.morseDataLabel.Location = new System.Drawing.Point(75, 259);
+            this.morseDataLabel.Location = new System.Drawing.Point(73, 280);
             this.morseDataLabel.Name = "morseDataLabel";
             this.morseDataLabel.Size = new System.Drawing.Size(187, 25);
             this.morseDataLabel.TabIndex = 4;
@@ -92,7 +93,7 @@ namespace MorseProject
             // labelTemp1
             // 
             this.labelTemp1.AutoSize = true;
-            this.labelTemp1.Location = new System.Drawing.Point(490, 290);
+            this.labelTemp1.Location = new System.Drawing.Point(490, 321);
             this.labelTemp1.Name = "labelTemp1";
             this.labelTemp1.Size = new System.Drawing.Size(55, 15);
             this.labelTemp1.TabIndex = 5;
@@ -101,7 +102,7 @@ namespace MorseProject
             // labelTemp2
             // 
             this.labelTemp2.AutoSize = true;
-            this.labelTemp2.Location = new System.Drawing.Point(490, 336);
+            this.labelTemp2.Location = new System.Drawing.Point(490, 370);
             this.labelTemp2.Name = "labelTemp2";
             this.labelTemp2.Size = new System.Drawing.Size(55, 15);
             this.labelTemp2.TabIndex = 6;
@@ -132,19 +133,30 @@ namespace MorseProject
             this.label2.TabIndex = 9;
             this.label2.Text = "控制.-";
             // 
-            // textBox2
+            // textBoxDelta
             // 
-            this.textBox2.Location = new System.Drawing.Point(493, 159);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 25);
-            this.textBox2.TabIndex = 10;
+            this.textBoxDelta.Location = new System.Drawing.Point(493, 159);
+            this.textBoxDelta.Name = "textBoxDelta";
+            this.textBoxDelta.Size = new System.Drawing.Size(100, 25);
+            this.textBoxDelta.TabIndex = 10;
+            // 
+            // buttonClear
+            // 
+            this.buttonClear.Location = new System.Drawing.Point(255, 211);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(116, 51);
+            this.buttonClear.TabIndex = 11;
+            this.buttonClear.Text = "清除";
+            this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.buttonClear);
+            this.Controls.Add(this.textBoxDelta);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxMin);
@@ -175,7 +187,8 @@ namespace MorseProject
         private System.Windows.Forms.TextBox textBoxMin;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxDelta;
+        private System.Windows.Forms.Button buttonClear;
     }
 }
 
