@@ -54,6 +54,19 @@ namespace MorseProject
             loadPort();
         }
         /// <summary>
+        /// 关闭窗口时关闭串口
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            try
+            {
+                sp.Close();
+            }
+            finally { }
+        }
+        /// <summary>
         /// 加载端口
         /// </summary>
         private void loadPort()
@@ -200,8 +213,13 @@ namespace MorseProject
                 read();
                 analyse();
                 if (clear)
+                {
+                    clear = false;
                     clearLabel();
+                }
             }
         }
+
+
     }
 }
