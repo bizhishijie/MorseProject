@@ -45,6 +45,7 @@ namespace MorseProject
             // 
             // portsBox
             // 
+            this.portsBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.portsBox.FormattingEnabled = true;
             this.portsBox.Location = new System.Drawing.Point(153, 98);
             this.portsBox.Name = "portsBox";
@@ -53,6 +54,7 @@ namespace MorseProject
             // 
             // labelPort
             // 
+            this.labelPort.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelPort.AutoSize = true;
             this.labelPort.Location = new System.Drawing.Point(150, 66);
             this.labelPort.Name = "labelPort";
@@ -62,6 +64,7 @@ namespace MorseProject
             // 
             // portsChoose
             // 
+            this.portsChoose.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.portsChoose.Location = new System.Drawing.Point(153, 141);
             this.portsChoose.Name = "portsChoose";
             this.portsChoose.Size = new System.Drawing.Size(116, 55);
@@ -72,6 +75,7 @@ namespace MorseProject
             // 
             // buttonStop
             // 
+            this.buttonStop.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonStop.Location = new System.Drawing.Point(275, 142);
             this.buttonStop.Name = "buttonStop";
             this.buttonStop.Size = new System.Drawing.Size(116, 54);
@@ -82,6 +86,7 @@ namespace MorseProject
             // 
             // morseDataLabel
             // 
+            this.morseDataLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.morseDataLabel.AutoSize = true;
             this.morseDataLabel.Font = new System.Drawing.Font("宋体", 15F);
             this.morseDataLabel.Location = new System.Drawing.Point(148, 246);
@@ -92,24 +97,25 @@ namespace MorseProject
             // 
             // labelTemp1
             // 
+            this.labelTemp1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelTemp1.AutoSize = true;
             this.labelTemp1.Location = new System.Drawing.Point(552, 280);
             this.labelTemp1.Name = "labelTemp1";
-            this.labelTemp1.Size = new System.Drawing.Size(55, 15);
+            this.labelTemp1.Size = new System.Drawing.Size(0, 15);
             this.labelTemp1.TabIndex = 5;
-            this.labelTemp1.Text = "label1";
             // 
             // labelTemp2
             // 
+            this.labelTemp2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelTemp2.AutoSize = true;
             this.labelTemp2.Location = new System.Drawing.Point(552, 329);
             this.labelTemp2.Name = "labelTemp2";
-            this.labelTemp2.Size = new System.Drawing.Size(55, 15);
+            this.labelTemp2.Size = new System.Drawing.Size(0, 15);
             this.labelTemp2.TabIndex = 6;
-            this.labelTemp2.Text = "label1";
             // 
             // textBoxMin
             // 
+            this.textBoxMin.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxMin.Location = new System.Drawing.Point(625, 68);
             this.textBoxMin.Name = "textBoxMin";
             this.textBoxMin.Size = new System.Drawing.Size(100, 25);
@@ -117,6 +123,7 @@ namespace MorseProject
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(622, 50);
             this.label1.Name = "label1";
@@ -126,6 +133,7 @@ namespace MorseProject
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(622, 96);
             this.label2.Name = "label2";
@@ -136,6 +144,7 @@ namespace MorseProject
             // 
             // textBoxDelta
             // 
+            this.textBoxDelta.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxDelta.Location = new System.Drawing.Point(625, 114);
             this.textBoxDelta.Name = "textBoxDelta";
             this.textBoxDelta.Size = new System.Drawing.Size(100, 25);
@@ -143,6 +152,7 @@ namespace MorseProject
             // 
             // buttonClear
             // 
+            this.buttonClear.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonClear.Location = new System.Drawing.Point(153, 286);
             this.buttonClear.Name = "buttonClear";
             this.buttonClear.Size = new System.Drawing.Size(116, 51);
@@ -169,6 +179,7 @@ namespace MorseProject
             this.Controls.Add(this.portsBox);
             this.Controls.Add(this.labelPort);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Communication";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);

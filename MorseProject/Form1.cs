@@ -123,6 +123,7 @@ namespace MorseProject
         private void buttonClear_Click(object sender, EventArgs e)
         {
             clear = true;
+            morseStr = String.Empty;
         }
         /// <summary>
         /// 从指定的端口读取数字
@@ -164,7 +165,7 @@ namespace MorseProject
                 j += 1;
                 if (j > 70)
                 {
-                    numList = numList.Skip(35).Take(35).ToList();//取列表的后一半
+                    numList = numList.Skip(50).Take(19).ToList();//取列表的后一部分
                     str = " ";
                     if (morseDataLabel.InvokeRequired)
                         if (!morseDataLabel.Text.EndsWith(" "))
@@ -197,6 +198,8 @@ namespace MorseProject
         {
             if (morseDataLabel.InvokeRequired)
                 this.morseDataLabel.Invoke(actionDraw, "Information output: ");
+            if (labelTemp2.InvokeRequired)
+                this.labelTemp2.Invoke(actionDraw2, string.Empty);
         }
         /// <summary>
         /// 进程
