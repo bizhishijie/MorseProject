@@ -71,7 +71,7 @@ namespace MorseProject
         /// </summary>
         private void loadPort()
         {
-            labelPort.Text = "共检测到" + AvaPorts.Count.ToString() + "个串口";
+            labelPort.Text =  AvaPorts.Count.ToString() + " serial ports detected";
             portsBox.Items.Clear();
             for (i = 0; i < AvaPorts.Count; i++)
                 portsBox.Items.Add(AvaPorts[i].PortName);
@@ -196,7 +196,7 @@ namespace MorseProject
         private void clearLabel()
         {
             if (morseDataLabel.InvokeRequired)
-                this.morseDataLabel.Invoke(actionDraw, "受到的信息为：");
+                this.morseDataLabel.Invoke(actionDraw, "Information output: ");
         }
         /// <summary>
         /// 进程
@@ -220,6 +220,9 @@ namespace MorseProject
             }
         }
 
+        private void label2_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

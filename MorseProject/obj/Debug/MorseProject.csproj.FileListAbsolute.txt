@@ -24,3 +24,7 @@ C:\Users\sharuicheng\source\repos\MorseProject\MorseProject\bin\Debug\MorseProje
 C:\Users\sharuicheng\source\repos\MorseProject\MorseProject\obj\Debug\MorseProject.exe.manifest
 C:\Users\sharuicheng\source\repos\MorseProject\MorseProject\obj\Debug\MorseProject.application
 C:\Users\sharuicheng\source\repos\MorseProject\MorseProject\obj\Debug\MorseProject.csproj.AssemblyReference.cache
+E:\WindowsProject\MorseProject\MorseProject\bin\Debug\MorseProject.exe.manifest
+E:\WindowsProject\MorseProject\MorseProject\bin\Debug\MorseProject.application
+E:\WindowsProject\MorseProject\MorseProject\obj\Debug\MorseProject.exe.manifest
+E:\WindowsProject\MorseProject\MorseProject\obj\Debug\MorseProject.application
