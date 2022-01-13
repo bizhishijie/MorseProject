@@ -46,7 +46,7 @@ namespace MorseProject
             // portsBox
             // 
             this.portsBox.FormattingEnabled = true;
-            this.portsBox.Location = new System.Drawing.Point(78, 83);
+            this.portsBox.Location = new System.Drawing.Point(153, 98);
             this.portsBox.Name = "portsBox";
             this.portsBox.Size = new System.Drawing.Size(121, 23);
             this.portsBox.TabIndex = 1;
@@ -54,7 +54,7 @@ namespace MorseProject
             // labelPort
             // 
             this.labelPort.AutoSize = true;
-            this.labelPort.Location = new System.Drawing.Point(75, 51);
+            this.labelPort.Location = new System.Drawing.Point(150, 66);
             this.labelPort.Name = "labelPort";
             this.labelPort.Size = new System.Drawing.Size(55, 15);
             this.labelPort.TabIndex = 0;
@@ -62,21 +62,21 @@ namespace MorseProject
             // 
             // portsChoose
             // 
-            this.portsChoose.Location = new System.Drawing.Point(255, 51);
+            this.portsChoose.Location = new System.Drawing.Point(153, 141);
             this.portsChoose.Name = "portsChoose";
             this.portsChoose.Size = new System.Drawing.Size(116, 55);
             this.portsChoose.TabIndex = 2;
-            this.portsChoose.Text = "开始";
+            this.portsChoose.Text = "Start";
             this.portsChoose.UseVisualStyleBackColor = true;
             this.portsChoose.Click += new System.EventHandler(this.portsChoose_Click);
             // 
             // buttonStop
             // 
-            this.buttonStop.Location = new System.Drawing.Point(255, 130);
+            this.buttonStop.Location = new System.Drawing.Point(275, 142);
             this.buttonStop.Name = "buttonStop";
             this.buttonStop.Size = new System.Drawing.Size(116, 54);
             this.buttonStop.TabIndex = 3;
-            this.buttonStop.Text = "停止";
+            this.buttonStop.Text = "Stop";
             this.buttonStop.UseVisualStyleBackColor = true;
             this.buttonStop.Click += new System.EventHandler(this.buttonStop_Click);
             // 
@@ -84,16 +84,16 @@ namespace MorseProject
             // 
             this.morseDataLabel.AutoSize = true;
             this.morseDataLabel.Font = new System.Drawing.Font("宋体", 15F);
-            this.morseDataLabel.Location = new System.Drawing.Point(73, 280);
+            this.morseDataLabel.Location = new System.Drawing.Point(148, 246);
             this.morseDataLabel.Name = "morseDataLabel";
-            this.morseDataLabel.Size = new System.Drawing.Size(187, 25);
+            this.morseDataLabel.Size = new System.Drawing.Size(272, 25);
             this.morseDataLabel.TabIndex = 4;
-            this.morseDataLabel.Text = "收到的信息为：";
+            this.morseDataLabel.Text = "Information output: ";
             // 
             // labelTemp1
             // 
             this.labelTemp1.AutoSize = true;
-            this.labelTemp1.Location = new System.Drawing.Point(490, 321);
+            this.labelTemp1.Location = new System.Drawing.Point(552, 280);
             this.labelTemp1.Name = "labelTemp1";
             this.labelTemp1.Size = new System.Drawing.Size(55, 15);
             this.labelTemp1.TabIndex = 5;
@@ -102,7 +102,7 @@ namespace MorseProject
             // labelTemp2
             // 
             this.labelTemp2.AutoSize = true;
-            this.labelTemp2.Location = new System.Drawing.Point(490, 370);
+            this.labelTemp2.Location = new System.Drawing.Point(552, 329);
             this.labelTemp2.Name = "labelTemp2";
             this.labelTemp2.Size = new System.Drawing.Size(55, 15);
             this.labelTemp2.TabIndex = 6;
@@ -110,7 +110,7 @@ namespace MorseProject
             // 
             // textBoxMin
             // 
-            this.textBoxMin.Location = new System.Drawing.Point(493, 83);
+            this.textBoxMin.Location = new System.Drawing.Point(625, 68);
             this.textBoxMin.Name = "textBoxMin";
             this.textBoxMin.Size = new System.Drawing.Size(100, 25);
             this.textBoxMin.TabIndex = 7;
@@ -118,35 +118,36 @@ namespace MorseProject
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(490, 51);
+            this.label1.Location = new System.Drawing.Point(622, 50);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 15);
+            this.label1.Size = new System.Drawing.Size(95, 15);
             this.label1.TabIndex = 8;
-            this.label1.Text = "控制有无";
+            this.label1.Text = "Lower Bound";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(490, 130);
+            this.label2.Location = new System.Drawing.Point(622, 96);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 15);
+            this.label2.Size = new System.Drawing.Size(79, 15);
             this.label2.TabIndex = 9;
-            this.label2.Text = "控制.-";
+            this.label2.Text = "Threshold";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // textBoxDelta
             // 
-            this.textBoxDelta.Location = new System.Drawing.Point(493, 159);
+            this.textBoxDelta.Location = new System.Drawing.Point(625, 114);
             this.textBoxDelta.Name = "textBoxDelta";
             this.textBoxDelta.Size = new System.Drawing.Size(100, 25);
             this.textBoxDelta.TabIndex = 10;
             // 
             // buttonClear
             // 
-            this.buttonClear.Location = new System.Drawing.Point(255, 211);
+            this.buttonClear.Location = new System.Drawing.Point(153, 286);
             this.buttonClear.Name = "buttonClear";
             this.buttonClear.Size = new System.Drawing.Size(116, 51);
             this.buttonClear.TabIndex = 11;
-            this.buttonClear.Text = "清除";
+            this.buttonClear.Text = "Clear";
             this.buttonClear.UseVisualStyleBackColor = true;
             this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
@@ -168,7 +169,7 @@ namespace MorseProject
             this.Controls.Add(this.portsBox);
             this.Controls.Add(this.labelPort);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Communication";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
